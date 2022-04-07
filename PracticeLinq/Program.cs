@@ -9,9 +9,19 @@ namespace PracticeLinq
         static void Main(string[] args)
         {
             List<string> games = new List<string>
-            {"Donkey Kong Country", "Mario World","Legends of Zelda","Super Mario Cart", "NBA","Duck Hunt","Mortal Kombat"};
+            {"Donkey Kong Country", 
+                "Mario World",
+                "Legends of Zelda",
+                "Super Mario Cart", 
+                "NBA",
+                "Duck Hunt",
+                "Mortal Kombat"
+            };
+
+           // games.OrderBy(name => name.Length).ToList().ForEach(game => Console.WriteLine(game));// list in order by name length
 
             var games2 = games.Where(name => name.Contains ("t")).OrderBy(name => name.Length).OrderBy(name => name.Length).ToList();  
+
             foreach (var game in games2)
             {
                 Console.WriteLine(game);
